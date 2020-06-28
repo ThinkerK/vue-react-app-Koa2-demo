@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <script>
+    
+        $(function() {
+			var obj = {
+				movie_id:1,
+				point:3,
+				remark:"你不用演，你真的很烂"
+			}
+            $.post("http://localhost:3000/users/comment",obj, function(result){
+                console.log(result);
+				$("p").text(JSON.stringify(result));
+            })
+        })
+    </script>
+</head>
+<body>
+    <p></p>
+</body>
+</html>
